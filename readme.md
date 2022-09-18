@@ -24,9 +24,9 @@
 
    3. asgi.py to add these lines:-
       ```bash
-         from channels.routing import ProtocolTypeRouter, URLRouter
-         from channels.auth import AuthMiddlewareStack
-         import chatapp.routing
+         from channels.routing import ProtocolTypeRouter, URLRouter # channels setup
+         from channels.auth import AuthMiddlewareStack # channels setup
+         import chatapp.routing # channels setup
          
          application = ProtocolTypeRouter({
             'http': get_asgi_application(),
@@ -58,7 +58,7 @@
       </script>
    ```
 
-   6. create a 'consumer.py' file in the app directory and add these codes below:
+   6. create a 'consumers.py' file in the app directory and add these codes below:
    ```bash
       import json
       from channels.generic.websocket import WebsocketConsumer

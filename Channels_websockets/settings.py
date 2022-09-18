@@ -43,6 +43,13 @@ INSTALLED_APPS = [
 
 ASGI_APPLICATION = 'Channels_websockets.asgi.application'
 
+# InMemoryChannelLayer is only for development purpose
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
